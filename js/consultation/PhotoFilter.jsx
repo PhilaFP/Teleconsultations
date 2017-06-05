@@ -18,15 +18,16 @@ export default class PhotoFilter extends React.Component {
         this.state = {
             image: null,
             value: null,
-            filterType: null
+            filterType: null,
+            filterTypeToDelete: null
         }
     }
 
     addFilter = () => {
         const getFilter = {
-               name: this.state.filterType,
-               [getParameterName(this.state.filterType)]: this.state.value
-           }
+            name: this.state.filterType,
+            [getParameterName(this.state.filterType)]: this.state.value
+        }
 
         this.props.filter(getFilter,this.props.photoId);
     }
@@ -37,7 +38,6 @@ export default class PhotoFilter extends React.Component {
 
         this.setState({ filterType: value });
     };
-
 
 
     render() {
@@ -75,6 +75,7 @@ export default class PhotoFilter extends React.Component {
                 </div>
 
                 <button onClick={this.addFilter}> Filter </button>
+
 
             </div>
         );

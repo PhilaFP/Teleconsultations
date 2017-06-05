@@ -29,6 +29,11 @@ h3 {
     position:relative;
 }
 
+.test{
+    height:20px;
+    width:40px;
+}
+
 .root > div {
     padding: 5px;
 }
